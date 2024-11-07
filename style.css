@@ -64,6 +64,9 @@ h6 {
   --color-grayish-blue: hsl(229, 6%, 66%);
   --color-grayish-blue-transparent: hsl(229, 6%, 66%, 30%);
   --color-very-light-gray: hsl(0, 0%, 98%);
+
+  /* Spacing */
+  --gap-between-cards: 2.4rem;
 }
 
 body {
@@ -108,38 +111,45 @@ h1 + p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: var(--gap-between-cards);
   max-inline-size: 500px;
+}
+
+.container > * {
+  min-width: calc(100% + 1.2rem);
 }
 
 .card {
   position: relative;
   min-height: 22.2rem;
-  min-width: calc(100% + 1.2rem);
   border-radius: 8px;
   overflow: hidden;
   padding: 2.6rem 2.8rem;
   background-color: white;
-  box-shadow: 
-  0 16px 12px hsl(229, 6%, 66%, .1),
-  0 16px 12px hsl(212, 86%, 64%, .15);
+  box-shadow: 0 16px 12px hsl(229, 6%, 66%, 0.1), 0 16px 12px hsl(212, 86%, 64%, 0.15);
   font-size: 1.3rem;
 }
 
-.card:nth-of-type(1) {
+.container > .card:first-child {
   --color-card-top: var(--color-cyan);
 }
 
-.card:nth-of-type(2) {
+.card-group > .card:first-child {
   --color-card-top: var(--color-red);
 }
 
-.card:nth-of-type(3) {
+.card-group > .card:last-child {
   --color-card-top: var(--color-orange);
 }
 
-.card:nth-of-type(4) {
+.container > .card:last-child {
   --color-card-top: var(--color-blue);
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-between-cards);
 }
 
 .card::before {
@@ -154,12 +164,12 @@ h1 + p {
 .card h2 {
   color: var(--color-very-dark-blue);
   font-size: 2rem;
-  margin-block-end: .4rem;
+  margin-block-end: 0.4rem;
 }
 
 .card p {
   line-height: 1.7;
-  letter-spacing: .1px;
+  letter-spacing: 0.1px;
 }
 
 .card img {
