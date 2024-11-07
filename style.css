@@ -71,9 +71,12 @@ body {
 }
 
 main {
-  margin: 8.25rem auto 7.5rem;
-  max-width: 600px;
   padding-inline: 3.8rem;
+}
+
+header {
+  margin: 8.25rem auto 0;
+  max-inline-size: 600px;
 }
 
 p {
