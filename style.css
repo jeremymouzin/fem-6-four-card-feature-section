@@ -1,0 +1,165 @@
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Variables */
+
+:root {
+  /* Colors */
+  --color-red: hsl(0, 78%, 62%);
+  --color-cyan: hsl(180, 62%, 55%);
+  --color-orange: hsl(34, 97%, 64%);
+  --color-blue: hsl(212, 86%, 64%);
+  --color-very-dark-blue: hsl(234, 12%, 34%);
+  --color-very-dark-blue-transparent: hsl(234, 12%, 34%, 50%);
+  --color-grayish-blue: hsl(229, 6%, 66%);
+  --color-grayish-blue-transparent: hsl(229, 6%, 66%, 30%);
+  --color-very-light-gray: hsl(0, 0%, 98%);
+}
+
+.card:nth-of-type(1) {
+  --color-card-top: var(--color-cyan);
+}
+
+.card:nth-of-type(2) {
+  --color-card-top: var(--color-red);
+}
+
+.card:nth-of-type(3) {
+  --color-card-top: var(--color-orange);
+}
+
+.card:nth-of-type(4) {
+  --color-card-top: var(--color-blue);
+}
+
+body {
+  background-color: var(--color-very-light-gray);
+}
+
+main {
+  margin: 8.25rem 3.8rem 7.5rem;
+  max-width: 700px;
+}
+
+p {
+  color: var(--color-very-dark-blue-transparent);
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 2.4rem;
+  letter-spacing: 0.2px;
+  line-height: 1.55;
+  text-align: center;
+  color: var(--color-very-dark-blue);
+}
+
+.tagline {
+  font-weight: 600;
+}
+
+h1 + p {
+  margin-block-start: 1.5rem;
+  letter-spacing: 0.1px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.container {
+  margin-block-start: 7.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.card {
+  position: relative;
+  min-height: 22.2rem;
+  min-width: calc(100% + 1.2rem);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2.6rem 2.8rem;
+  background-color: white;
+  box-shadow: 
+  0 16px 12px hsl(229, 6%, 66%, .1),
+  0 16px 12px hsl(212, 86%, 64%, .15);
+  font-size: 1.3rem;
+}
+
+.card::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-card-top);
+  position: absolute;
+  inset: 0;
+}
+
+.card h2 {
+  color: var(--color-very-dark-blue);
+  font-size: 2rem;
+  margin-block-end: .4rem;
+}
+
+.card p {
+  line-height: 1.7;
+  letter-spacing: .1px;
+}
+
+.card img {
+  position: absolute;
+  inset-inline-end: 2.8rem;
+  inset-block-end: 2.8rem;
+  width: 57px;
+}
